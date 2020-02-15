@@ -12,6 +12,7 @@ class RealmStrategy: PersistenceStrategy {
     
     var title: String = "Realm Strategy"
     
+    // MARK: - Create
     func addItem(title: String) -> Item? {
         
         let realm = try! Realm()
@@ -29,6 +30,7 @@ class RealmStrategy: PersistenceStrategy {
         }
     }
     
+    // MARK: - Read
     func getItems() -> [Item] {
         
         let realm = try! Realm()
@@ -40,6 +42,7 @@ class RealmStrategy: PersistenceStrategy {
         return items
     }
     
+    // MARK: - Update
     func editItem(id: String, newTitle: String, success: @escaping () -> ()) {
         
         let realm = try! Realm()
@@ -60,6 +63,7 @@ class RealmStrategy: PersistenceStrategy {
         
     }
     
+    // MARK: - Delete
     func deleteItem(id: String, success: @escaping () -> ()) {
         
         let realm = try! Realm()

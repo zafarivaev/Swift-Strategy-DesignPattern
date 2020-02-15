@@ -12,6 +12,7 @@ import CoreData
 class CoreDataStrategy: PersistenceStrategy {
     var title: String = "Core Data Strategy"
     
+    // MARK: - Create
     func addItem(title: String) -> Item? {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return nil
@@ -34,6 +35,7 @@ class CoreDataStrategy: PersistenceStrategy {
                     id: itemEntity.id!)
     }
     
+    // MARK: - Read
     func getItems() -> [Item] {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return []
@@ -63,6 +65,7 @@ class CoreDataStrategy: PersistenceStrategy {
         
     }
     
+    // MARK: - Update
     func editItem(id: String, newTitle: String, success: @escaping () -> ()) {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -92,6 +95,7 @@ class CoreDataStrategy: PersistenceStrategy {
         }
     }
     
+    // MARK: - Delete
     func deleteItem(id: String, success: @escaping () -> ()) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
