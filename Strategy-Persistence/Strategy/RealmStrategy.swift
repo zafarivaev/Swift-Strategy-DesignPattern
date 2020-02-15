@@ -10,7 +10,7 @@ import RealmSwift
 
 class RealmStrategy: PersistenceStrategy {
     
-    var title: String = "RealmStrategy"
+    var title: String = "Realm Strategy"
     
     func addItem(title: String) -> Item? {
         

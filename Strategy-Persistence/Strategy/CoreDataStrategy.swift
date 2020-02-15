@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class CoreDataStrategy: PersistenceStrategy {
-    var title: String = "CoreDataStrategy"
+    var title: String = "Core Data Strategy"
     
     func addItem(title: String) -> Item? {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
